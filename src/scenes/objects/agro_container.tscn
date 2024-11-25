@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm7mxf637plpq"]
+
+[ext_resource type="PackedScene" uid="uid://dy7180a0gnkce" path="res://assets/raw/argo_container.glb" id="1_bsb1u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mf37m"]
+size = Vector3(6.00037, 2.33057, 2.27448)
+
+[node name="agro container" type="Node3D"]
+
+[node name="model" parent="." instance=ExtResource("1_bsb1u")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.0614345, 0, -0.279517)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0713501, -0.0256348, -0.281647)
+shape = SubResource("BoxShape3D_mf37m")

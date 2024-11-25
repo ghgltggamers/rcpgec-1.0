@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d02l7h5qodi1a"]
+
+[ext_resource type="PackedScene" uid="uid://deeoikvo8an1q" path="res://assets/raw/post_apocalytpic_style_container.glb" id="1_pkqoa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7erlu"]
+size = Vector3(7.02542, 2.2395, 2.27448)
+
+[node name="blue container" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0265656, -0.071167, -0.281647)
+shape = SubResource("BoxShape3D_7erlu")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_pkqoa")]
+transform = Transform3D(0.005, 0, 0, 0, 0.00359388, 0, 0, 0, 0.00330574, -1.91589, -1.15549, -4.80599)

@@ -1,0 +1,414 @@
+[gd_scene load_steps=33 format=3 uid="uid://dnieg3yma57sp"]
+
+[ext_resource type="Script" path="res://scripts/lobby.gd" id="1_1txjn"]
+[ext_resource type="Texture2D" uid="uid://dienf7heou71n" path="res://assets/mat/floor bareled/pavement_02_diff_1k.jpg" id="1_yylj7"]
+[ext_resource type="Texture2D" uid="uid://bog0k4gx84wvs" path="res://assets/mat/floor bareled/pavement_02_ao_1k.jpg" id="2_fk8nt"]
+[ext_resource type="Texture2D" uid="uid://dp4oibodovp6i" path="res://assets/mat/floor bareled/pavement_02_disp_1k.jpg" id="3_b4bcs"]
+[ext_resource type="Texture2D" uid="uid://b8jgovwge4mfj" path="res://assets/mat/floor bareled/pavement_02_nor_gl_1k.jpg" id="4_iimam"]
+[ext_resource type="Texture2D" uid="uid://cpqtxbb3gdint" path="res://assets/mat/floor bareled/pavement_02_rough_1k.jpg" id="5_b5ecg"]
+[ext_resource type="PackedScene" uid="uid://biadubgwgpgj0" path="res://assets/raw/old_rusty_car.glb" id="6_tw431"]
+[ext_resource type="PackedScene" uid="uid://endy8t26humr" path="res://assets/raw/free_tree_1.glb" id="7_wh64w"]
+[ext_resource type="PackedScene" uid="uid://cek7riihhf4tn" path="res://assets/raw/container.glb" id="8_q41o1"]
+[ext_resource type="PackedScene" uid="uid://bfbgkxhgndd23" path="res://assets/raw/classic_shipping_container_freegameready.glb" id="9_0hevq"]
+[ext_resource type="ArrayMesh" uid="uid://baw3juny4l04q" path="res://assets/models/fence/fence.obj" id="10_wgk65"]
+[ext_resource type="AudioStream" uid="uid://bao5wmaddifyi" path="res://assets/misc/crash-phonk-2024-mix-258038.mp3" id="12_qjtxb"]
+[ext_resource type="AudioStream" uid="uid://df7pomwjrmvou" path="res://assets/misc/mouse-click-117076.mp3" id="13_yku18"]
+[ext_resource type="Texture2D" uid="uid://dfafa1u4qwx27" path="res://assets/mat/floor for storee/herringbone_parquet_diff_1k.jpg" id="14_sc48t"]
+[ext_resource type="Texture2D" uid="uid://d10xujrdj5qqp" path="res://assets/mat/floor for storee/herringbone_parquet_ao_1k.jpg" id="15_7w0g5"]
+[ext_resource type="Texture2D" uid="uid://bgmidtwbr3q6n" path="res://assets/mat/floor for storee/herringbone_parquet_disp_1k.jpg" id="16_3g4mh"]
+[ext_resource type="Texture2D" uid="uid://bb744nii87up0" path="res://assets/mat/floor for storee/herringbone_parquet_nor_gl_1k.jpg" id="17_h7fgp"]
+[ext_resource type="Texture2D" uid="uid://d4ecxbj54s2a0" path="res://assets/mat/floor for storee/herringbone_parquet_rough_1k.jpg" id="18_q7kst"]
+[ext_resource type="Texture2D" uid="uid://bf875l342abh1" path="res://assets/img/lambo cambo.png" id="19_wulnn"]
+[ext_resource type="PackedScene" uid="uid://ltwhdh5nq7o5" path="res://assets/raw/2021_lamborghini_countach_lpi_800-4.glb" id="20_luwx6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cd0qe"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_8kp4j"]
+sky_material = SubResource("ProceduralSkyMaterial_cd0qe")
+
+[sub_resource type="Environment" id="Environment_avojb"]
+background_mode = 2
+sky = SubResource("Sky_8kp4j")
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 16.0
+ssao_intensity = 2.67
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_density = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6h5w2"]
+albedo_texture = ExtResource("1_yylj7")
+roughness_texture = ExtResource("5_b5ecg")
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource("4_iimam")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_fk8nt")
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_b4bcs")
+uv1_scale = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6q1v"]
+albedo_color = Color(0.585062, 0.585062, 0.585062, 1)
+metallic = 0.75
+metallic_specular = 1.0
+roughness = 0.24
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2uog"]
+albedo_color = Color(0.632226, 6.37732e-07, 2.40654e-07, 1)
+metallic = 0.55
+metallic_specular = 1.0
+roughness = 0.35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdvsu"]
+bg_color = Color(0.505882, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_im4k8"]
+bg_color = Color(0.733002, 1.64848e-06, 3.85046e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g533g"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfows"]
+bg_color = Color(1, 1, 1, 0.235294)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7txg3"]
+albedo_texture = ExtResource("14_sc48t")
+roughness_texture = ExtResource("18_q7kst")
+normal_enabled = true
+normal_texture = ExtResource("17_h7fgp")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("15_7w0g5")
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("16_3g4mh")
+uv1_scale = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax652"]
+albedo_texture = ExtResource("19_wulnn")
+
+[node name="lobby" type="Node3D"]
+script = ExtResource("1_1txjn")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_avojb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, -0.376265, 0.893676, 0.244473, -0.329279, 0.117654, -0.936874, 0, 0, 0)
+light_color = Color(0.980392, 0.858824, 0.588235, 1)
+light_energy = 16.0
+shadow_enabled = true
+
+[node name="3d" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="3d"]
+transform = Transform3D(1, 0, 0, 0, 0.214813, 0, 0, 0, 1, 0, 0, -0.5)
+size = Vector3(9, 1, 8)
+material = SubResource("StandardMaterial3D_6h5w2")
+
+[node name="car1" parent="3d" instance=ExtResource("6_tw431")]
+transform = Transform3D(0.00433013, 7.58399e-05, -0.00249884, -8.00432e-05, 0.00499934, 1.30268e-05, 0.00249871, 2.87214e-05, 0.00433078, -0.0635428, 0.110748, -0.230963)
+
+[node name="Sketchfab_Scene" parent="3d" instance=ExtResource("7_wh64w")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 3.72262, 0, -3.82108)
+
+[node name="Sketchfab_Scene2" parent="3d" instance=ExtResource("8_q41o1")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 3.5316, 0, -1.2744)
+
+[node name="Sketchfab_Scene3" parent="3d" instance=ExtResource("9_0hevq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.13338, 1.14003, 2.6691)
+
+[node name="Camera3D" type="Camera3D" parent="3d"]
+transform = Transform3D(-5.16191e-08, 0.5, -0.866025, 2.98023e-08, 0.866025, 0.5, 1, 0, -5.96046e-08, -4.16841, 2.2886, 1.70038)
+
+[node name="fence- group 1" type="Node3D" parent="3d"]
+
+[node name="Fence" type="MeshInstance3D" parent="3d/fence- group 1"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 3.41294, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence2" type="MeshInstance3D" parent="3d/fence- group 1"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 2.41294, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence3" type="MeshInstance3D" parent="3d/fence- group 1"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 1.41294, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence4" type="MeshInstance3D" parent="3d/fence- group 1"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 0.412937, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence5" type="MeshInstance3D" parent="3d/fence- group 1"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -0.587063, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence6" type="MeshInstance3D" parent="3d/fence- group 1"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.58706, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence7" type="MeshInstance3D" parent="3d/fence- group 1"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -2.58706, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence8" type="MeshInstance3D" parent="3d/fence- group 1"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -3.58706, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="fence- group 2" type="Node3D" parent="3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.87557)
+
+[node name="Fence" type="MeshInstance3D" parent="3d/fence- group 2"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 3.41294, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence2" type="MeshInstance3D" parent="3d/fence- group 2"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 2.41294, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence3" type="MeshInstance3D" parent="3d/fence- group 2"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 1.41294, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence4" type="MeshInstance3D" parent="3d/fence- group 2"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 0.412937, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence5" type="MeshInstance3D" parent="3d/fence- group 2"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -0.587063, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence6" type="MeshInstance3D" parent="3d/fence- group 2"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.58706, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence7" type="MeshInstance3D" parent="3d/fence- group 2"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -2.58706, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="Fence8" type="MeshInstance3D" parent="3d/fence- group 2"]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -3.58706, 0.446946, -4.4315)
+mesh = ExtResource("10_wgk65")
+surface_material_override/0 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6q1v")
+surface_material_override/2 = SubResource("StandardMaterial3D_v2uog")
+
+[node name="2d" type="Node2D" parent="."]
+
+[node name="ui" type="Control" parent="2d"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+
+[node name="start_btn" type="Button" parent="2d/ui"]
+layout_mode = 0
+offset_right = 229.0
+offset_bottom = 81.0
+text = "Start"
+
+[node name="settinga_btn" type="Button" parent="2d/ui"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 100.0
+offset_right = 229.0
+offset_bottom = 177.0
+text = "Settings"
+
+[node name="settings_Window" type="ColorRect" parent="2d/ui"]
+visible = false
+layout_mode = 0
+offset_left = 205.0
+offset_top = 97.0
+offset_right = 945.0
+offset_bottom = 547.0
+
+[node name="title" type="ColorRect" parent="2d/ui/settings_Window"]
+layout_mode = 0
+offset_right = 740.0
+offset_bottom = 37.0
+color = Color(0.592157, 1, 1, 1)
+
+[node name="Label" type="Label" parent="2d/ui/settings_Window/title"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 6.0
+offset_right = 399.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Settngs"
+
+[node name="close_settingas" type="Button" parent="2d/ui/settings_Window/title"]
+layout_mode = 0
+offset_left = 703.0
+offset_right = 740.0
+offset_bottom = 37.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_bdvsu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_bdvsu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_im4k8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g533g")
+text = "x"
+
+[node name="content" type="Control" parent="2d/ui/settings_Window"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="h1" type="Label" parent="2d/ui/settings_Window/content"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 55.0
+offset_right = 443.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Customise Settings!"
+
+[node name="hr" type="ColorRect" parent="2d/ui/settings_Window/content"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 131.0
+offset_right = 720.0
+offset_bottom = 135.0
+color = Color(0.691357, 0.691357, 0.691357, 1)
+
+[node name="graphics quality" type="Label" parent="2d/ui/settings_Window/content"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 161.0
+offset_right = 173.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Graphics Quality: "
+
+[node name="low" type="Button" parent="2d/ui/settings_Window/content/graphics quality"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 1.0
+offset_right = 169.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_xfows")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_xfows")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xfows")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xfows")
+text = "Low"
+
+[node name="high" type="Button" parent="2d/ui/settings_Window/content/graphics quality"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 1.0
+offset_right = 209.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_xfows")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_xfows")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xfows")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xfows")
+text = "high"
+
+[node name="version" type="Label" parent="2d/ui/settings_Window/content"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 190.0
+offset_right = 78.0
+offset_bottom = 213.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Version: 1.0
+Author: ghgltggamer
+Game: Official
+Warrenty: No
+License: MIT License
+Source Type: OpenSource"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_qjtxb")
+volume_db = 1.0
+autoplay = true
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_yku18")
+volume_db = 1.0
+
+[node name="3d-store" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25.0348)
+
+[node name="surface" type="CSGBox3D" parent="3d-store"]
+transform = Transform3D(9.15352, 0, 0, 0, 0.4, 0, 0, 0, 8.74389, 0, 0, 11.0046)
+material = SubResource("StandardMaterial3D_7txg3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="3d-store"]
+transform = Transform3D(1, 0, 0, 0, 3.68911e-07, -5.832, 0, -8.4397, -2.54925e-07, 4.18763, 2.94941, 10.8843)
+material = SubResource("StandardMaterial3D_ax652")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="3d-store"]
+transform = Transform3D(-4.37114e-08, -8.4397, -2.54925e-07, 0, 3.68911e-07, -5.832, -1, 3.68911e-07, 1.11431e-14, -0.380302, 2.94941, 6.37263)
+material = SubResource("StandardMaterial3D_ax652")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="3d-store"]
+transform = Transform3D(-4.37114e-08, 8.4397, 2.54925e-07, 0, 3.68911e-07, -5.832, 1, 3.68911e-07, 1.11431e-14, -0.281179, 2.94941, 14.8843)
+material = SubResource("StandardMaterial3D_ax652")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("20_luwx6")]
+transform = Transform3D(-0.463074, 0, 0.373614, 0, 0.595, 0, -0.373614, 0, -0.463074, -1.3666, 0.882618, 35.0683)
+
+[connection signal="button_down" from="2d/ui/start_btn" to="." method="_on_start_btn_button_down"]
+[connection signal="button_down" from="2d/ui/settinga_btn" to="." method="_on_settinga_btn_button_down"]
+[connection signal="button_down" from="2d/ui/settings_Window/title/close_settingas" to="." method="_on_close_settingas_button_down"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
