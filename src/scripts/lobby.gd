@@ -17,8 +17,9 @@ func _on_audio_stream_player_finished() -> void:
 	$AudioStreamPlayer.play();
 
 
-func _on_start_btn_button_down() -> void:
+func _on_start_btn_button_down() -> void: # This will run once the start button is clicked
 	$click.play();
+	get_tree().change_scene_to_file("res://scenes/lvel/map.tscn"); # Change the scene to level scene
 
 
 func _on_settinga_btn_button_down() -> void:
